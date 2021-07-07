@@ -1,0 +1,30 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: elyra-ai
+    labels:
+      app: elyra-ai
+  spec:
+    containers:
+      - name: elyra-ai
+        image: quay.io/romeokienzler/elyra-ai:latest
+        command: ["jupyter"]
+        args: ["lab", "--NotebookApp.password='argon2:$argon2id$v=19$m=10240,t=10,p=8$nQoj91rLxttfnaNYAzx9Rw$+JEfHhDwHQd2rD3ixKVOCg'"]
+        ports:
+          - containerPort: 8888
+        volumeMounts:	
+          - mountPath: /home/jovyan/.local/share/jupyter/metadata
+            name: elyra-runtimes
+    initContainers:
+    - name: init-elyra-runtimes
+      image: ubuntu:20.04
+      command: ['sh', '-c', "chown -R 1000:1000 /home/jovyan/.local/share/jupyter/metadata"] 
+      volumeMounts:
+          - mountPath: /home/jovyan/.local/share/jupyter/metadata
+            name: elyra-runtimes
+    volumes:
+      - name: elyra-runtimes
+        persistentVolumeClaim:
+          claimName: pvc-elyra-runtimes
+        

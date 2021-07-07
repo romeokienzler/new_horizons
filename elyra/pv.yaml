@@ -1,0 +1,31 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-elyra-work
+  labels:
+    type: local
+    app: elyra-ai
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/home/jovyan/work"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-elyra-runtimes
+  labels:
+    type: local
+    app: elyra-ai
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/home/jovyan/.local/share/jupyter/metadata"

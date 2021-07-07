@@ -1,0 +1,17 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: spark
+    labels:
+      app: spark
+  spec:
+    containers:
+      - name: spark
+        image: ubuntu:20.04
+        command: ["/bin/bash", "-c", "while true; do echo 1; sleep 1; done"]
+      - name: kube-proxy-sidecar
+        image: bitnami/kubectl
+        command: ["kubectl", "proxy"]
+        ports:
+          - containerPort: 8001

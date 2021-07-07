@@ -1,0 +1,71 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elyra-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /login
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
+      - path: /elyra
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /git
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /lsp
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /kernelspecs
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888 
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888       
+      - path: /static
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
+      - path: /lab
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra-ai
+            port:
+              number: 8888

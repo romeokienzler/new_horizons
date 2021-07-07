@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cafe-ingress
+  annotations:
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  ingressClassName: "nginx"
+  tls:
+  - hosts:
+    - rumadifree.crabdance.com	
+    secretName: tls-rumadi-ingress
+  rules:
+  - host: rumadifree.crabdance.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: elyra-ai
+          servicePort: 8888
+

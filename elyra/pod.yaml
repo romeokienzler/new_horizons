@@ -1,0 +1,14 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: elyra-ai
+    labels:
+      app: elyra-ai
+  spec:
+    containers:
+      - name: elyra-ai
+        image: romeokienzler/elyra-ai:latest
+        ports:
+          - containerPort: 8888
+        

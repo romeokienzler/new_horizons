@@ -8,7 +8,7 @@
   spec:
     containers:
       - name: spark
-        image: ubuntu:20.04
+        image: romeokienzler/spark_driver:3.1.2
         command: ["/bin/bash", "-c", "while true; do echo 1; sleep 1; done"]
       - name: kube-proxy-sidecar
         image: bitnami/kubectl

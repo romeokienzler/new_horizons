@@ -11,4 +11,17 @@
         image: romeokienzler/elyra-ai:latest
         ports:
           - containerPort: 8888
-        
+      - name: postgresql
+        image: postgres
+        ports:
+          - containerPort: 5432
+        env:
+          - name: POSTGRES_PASSWORD
+            value: "password"
+      - name: nginx
+        image: nginx
+        ports:
+          - containerPort: 8080
+        env:
+          - name: NGINX_PORT
+            value: "8080"

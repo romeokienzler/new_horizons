@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kfp-ingress
+spec:
+  rules:
+  - host: "kubeflow.rkie-kubeflow-442dbba0442be6c8c50f31ed96b00601-0000.eu-de.containers.appdomain.cloud"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ml-pipeline-ui
+            port:
+              number: 80
+  - host: "minio.rkie-kubeflow-442dbba0442be6c8c50f31ed96b00601-0000.eu-de.containers.appdomain.cloud"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: minio-service
+            port:
+              number: 9000
+

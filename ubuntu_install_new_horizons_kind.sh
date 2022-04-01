@@ -3,6 +3,8 @@ service docker start
 ./install_kubectl.sh
 ./install_kustomize.sh
 ./kind/install_kind.sh
-./kind/create_kind_cluster.sh
-kubectl config current-context
+cd kind
+./create_kind_cluster.sh
+cd ..
+kubectl cluster-info --context kind-kind
 ./kubeflow/install_kubeflow.sh

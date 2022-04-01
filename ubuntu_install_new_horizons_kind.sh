@@ -1,4 +1,5 @@
 ./ubuntu_install_docker.sh
+service docker start
 ./install_kubectl.sh
 ./install_kustomize.sh
 ./kind/install_kind.sh

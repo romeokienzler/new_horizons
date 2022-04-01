@@ -1,4 +1,3 @@
 #!/bin/bash
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
-chmod +x ./kind
-mv kind /bin/
+curl -Lo https://github.com/kubernetes-sigs/kind/releases/download/v0.12.0/kind-linux-amd64
+chmod  /bin/kind

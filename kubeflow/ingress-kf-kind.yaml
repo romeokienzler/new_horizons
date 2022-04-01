@@ -4,10 +4,10 @@ metadata:
   name: kf-ingress
 spec:
   rules:
-  - host: "kubeflow.new-horizons"
+  - host: "dashboard.new-horizons"
     http:
       paths:
-      - path: /
+      - path: /_/pipeline
         pathType: Prefix
         backend:
           service:

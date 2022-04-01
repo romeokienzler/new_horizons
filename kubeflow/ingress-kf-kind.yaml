@@ -4,80 +4,15 @@ metadata:
   name: kf-ingress
 spec:
   rules:
-  - host: "dashboard.new-horizons"
-    http:
-      paths:
-      - path: /_/pipeline
-        pathType: Prefix
-        backend:
-          service:
-            name: ml-pipeline-ui
-            port:
-              number: 80
-  - host: "minio.new-horizons"
+  - host: "kubeflow.new-horizons"
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: minio-service
-            port:
-              number: 9000
-  - host: "katib.new-horizons"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: katib-ui
+            name: istio-ingressgateway
             port:
               number: 80
-  - host: "kserve.new-horizons"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: kserve-models-web-app
-            port:
-              number: 80
-  - host: "tensorboard.new-horizons"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: tensorboards-web-app-service
-            port:
-              number: 80
-  - host: "jupyter.new-horizons"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: jupyter-web-app-service
-            port:
-              number: 80
-  - host: "dashboard.new-horizons"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: centraldashboard
-            port:
-              number: 80
-
-
-
-
-
 
 

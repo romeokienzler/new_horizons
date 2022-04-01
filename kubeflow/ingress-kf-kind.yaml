@@ -4,7 +4,7 @@ metadata:
   name: kfp-ingress
 spec:
   rules:
-  - host: "kubeflow.new_horizons"
+  - host: "kubeflow.new-horizons"
     http:
       paths:
       - path: /
@@ -14,7 +14,7 @@ spec:
             name: ml-pipeline-ui
             port:
               number: 80
-  - host: "minio.new_horizons"
+  - host: "minio.new-horizons"
     http:
       paths:
       - path: /
@@ -24,7 +24,7 @@ spec:
             name: minio-service
             port:
               number: 9000
-  - host: "katib.new_horizons"
+  - host: "katib.new-horizons"
     http:
       paths:
       - path: /
@@ -34,7 +34,7 @@ spec:
             name: katib-ui
             port:
               number: 80
-  - host: "kserve.new_horizons"
+  - host: "kserve.new-horizons"
     http:
       paths:
       - path: /
@@ -44,7 +44,7 @@ spec:
             name: kserve-models-web-app
             port:
               number: 80
-  - host: "tensorboard.new_horizons"
+  - host: "tensorboard.new-horizons"
     http:
       paths:
       - path: /
@@ -54,7 +54,7 @@ spec:
             name: tensorboards-web-app-service
             port:
               number: 80
-  - host: "jupyter.new_horizons"
+  - host: "jupyter.new-horizons"
     http:
       paths:
       - path: /

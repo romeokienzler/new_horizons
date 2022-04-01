@@ -4,13 +4,13 @@ metadata:
   name: elyra-ingress
 spec:
   rules:
-  - host: "elyra.rkie-kubeflow-442dbba0442be6c8c50f31ed96b00601-0000.eu-de.containers.appdomain.cloud"
+  - host: "elyra.localhost"
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: elyra-ai
+            name: elyra
             port:
               number: 8888

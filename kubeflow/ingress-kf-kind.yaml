@@ -64,6 +64,16 @@ spec:
             name: jupyter-web-app-service
             port:
               number: 80
+  - host: "dashboard.new-horizons"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: centraldashboard
+            port:
+              number: 80
 
 
 

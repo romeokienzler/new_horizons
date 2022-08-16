@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: build-elyra-image
 
 on:
   push:
@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./elyra --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build ./elyra --file ./elyra/Dockerfile --tag my-image-name:$(date +%s)

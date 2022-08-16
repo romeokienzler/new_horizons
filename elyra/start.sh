@@ -14,7 +14,7 @@ echo [gitco] >> ~/.config/rclone/rclone.conf
 echo type = local >> ~/.config/rclone/rclone.conf
 
 rclone mkdir ibm_cos:/$BUCKET/$PROJECT/
-rclone sync iibm_cos:/$BUCKET/$PROJECT/ gitco:/home/jovyan/work/
+rclone sync ibm_cos:/$BUCKET/$PROJECT/ gitco:/home/jovyan/work/
 while true; do rclone sync gitco:/home/jovyan/work/ ibm_cos:/$BUCKET/$PROJECT/; sleep 1; done  &
 
 jupyter lab --no-browser --ServerApp.password="$(echo $JL_PASSWORD | python -c 'from notebook.auth import passwd;print(passwd(input()))')"

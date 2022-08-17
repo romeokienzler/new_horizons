@@ -15,10 +15,10 @@ echo type = local >> ~/.config/rclone/rclone.conf
 
 export PROJECT_EXISTS=`rclone ls ibm_cos:/$BUCKET/$PROJECT |wc -l`
 if [ $PROJECT_EXISTS -lt 1 ]; then
-  rclone sync ibm_cos:/$BUCKET/$PROJECT/ gitco:/home/jovyan/
-else
   rclone mkdir ibm_cos:/$BUCKET/$PROJECT/
   rclone sync gitco:/home/jovyan/ ibm_cos:/$BUCKET/$PROJECT/
+else
+  rclone sync ibm_cos:/$BUCKET/$PROJECT/ gitco:/home/jovyan/
 fi
 
 while true; do rclone sync gitco:/home/jovyan/ ibm_cos:/$BUCKET/$PROJECT/; sleep 1; done  &

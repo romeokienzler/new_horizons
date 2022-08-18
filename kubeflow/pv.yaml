@@ -4,7 +4,7 @@ metadata:
   name: pv-kubeflow
   namespace: kubeflow
 spec:
-  storageClassName: manual
+  storageClassName: standard
   capacity:
     storage: 50Gi
   accessModes:

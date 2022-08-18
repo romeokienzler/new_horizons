@@ -1,4 +1,4 @@
-docker build -t elyra-ce:0.11 .
-docker tag elyra-ce:0.11 romeokienzler/elyra-ce:0.11
-docker push romeokienzler/elyra-ce:0.11
+docker build -t elyra-ce:0.12 .
+docker tag elyra-ce:0.12 romeokienzler/elyra-ce:0.12
+docker push romeokienzler/elyra-ce:0.12
 

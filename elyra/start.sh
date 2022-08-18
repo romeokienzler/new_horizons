@@ -25,6 +25,8 @@ else
 fi
 
 ./expect_ssh.sh
+git config --global user.email $GIT_EMAIL
+git config --global user.name $GIT_NAME
 
 while true; do rclone sync gitco:/home/jovyan/ ibm_cos:/$BUCKET/$PROJECT/; sleep 1; done  &
 

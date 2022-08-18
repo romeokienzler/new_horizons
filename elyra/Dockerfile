@@ -6,6 +6,6 @@ USER jovyan
 #RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -P ""
 RUN mkdir -p /home/jovyan/.local/share/jupyter/metadata
 ADD start.sh /home/jovyan/start.sh
-ADD expext_ssh.sh /home/jovyan/expext_ssh.sh
+ADD expect_ssh.sh /home/jovyan/expect_ssh.sh
 EXPOSE 8888 
 CMD /home/jovyan/start.sh

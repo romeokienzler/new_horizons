@@ -7,7 +7,7 @@ USER jovyan
 RUN mkdir -p /home/jovyan/.local/share/jupyter/metadata
 ADD start.sh /home/jovyan/start.sh
 ADD expect_ssh.sh /home/jovyan/expect_ssh.sh
-RUN chown jovyan home/jovyan/start.sh
-RUN chown jovyan home/jovyan/expect_ssh.sh
+RUN chown jovyan /home/jovyan/start.sh
+RUN chown jovyan /home/jovyan/expect_ssh.sh
 EXPOSE 8888 
 CMD /home/jovyan/start.sh

@@ -22,6 +22,7 @@ if [ $PROJECT_EXISTS -lt 1 ]; then
   rclone sync gitco:/home/jovyan/ ibm_cos:/$BUCKET/$PROJECT/
 else
   rclone sync ibm_cos:/$BUCKET/$PROJECT/ gitco:/home/jovyan/
+  chmod 400 /home/jovyan/.ssh/id_rsa
 fi
 
 ./expect_ssh.sh

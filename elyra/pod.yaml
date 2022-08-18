@@ -8,7 +8,55 @@
   spec:
     containers:
       - name: elyra
-        image: elyra/elyra:3.7.0
+        image: romeokienzler/elyra-ce:0.12
         ports:
           - containerPort: 8888
-
+        env:
+          - name: PROJECT
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: PROJECT
+                optional: false
+          - name: SSH_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: SSH_PASSWORD
+                optional: false
+          - name: GIT_NAME
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: GIT_NAME
+                optional: false
+          - name: GIT_EMAIL
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: GIT_EMAIL
+                optional: false
+          - name: S3_ENDPOINT
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: S3_ENDPOINT
+                optional: false
+          - name: SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: SECRET_ACCESS_KEY
+                optional: false
+          - name: ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: ACCESS_KEY_ID
+                optional: false
+          - name: JL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secrets
+                key: JL_PASSWORD
+                optional: false

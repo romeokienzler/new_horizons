@@ -5,7 +5,7 @@ metadata:
   labels:
     app: elyra-ai
 spec:
-  storageClassName: manual
+  storageClassName: standard
   accessModes:
     - ReadWriteMany
   resources:
@@ -19,7 +19,7 @@ metadata:
   labels:
     app: elyra-ai
 spec:
-  storageClassName: manual
+  storageClassName: standard
   accessModes:
     - ReadWriteMany
   resources:

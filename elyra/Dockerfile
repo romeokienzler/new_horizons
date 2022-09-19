@@ -13,5 +13,7 @@ RUN chown jovyan:users /home/jovyan/start.sh
 RUN chmod 755 /home/jovyan/expect_ssh.sh
 RUN chown jovyan:users /home/jovyan/expect_ssh.sh
 USER jovyan
+RUN echo "c.NotebookApp.rate_limit_window = 10" >> /home/jovyan/.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.iopub_data_rate_limit = 10000000" >> /home/jovyan/.jupyter/jupyter_notebook_config.py
 EXPOSE 8888 
 CMD /home/jovyan/start.sh

@@ -8,7 +8,8 @@
   spec:
     containers:
       - name: elyra
-        image: romeokienzler/elyra-ce:0.12
+        image: romeokienzler/elyra-ce:0.13
+        command: ["/home/jovyan/start.sh"]
         ports:
           - containerPort: 8888
         env:

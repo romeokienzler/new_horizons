@@ -11,9 +11,9 @@ duplicity list-current-files s3://$S3_ENDPOINT/$BUCKET/$PROJECT
 export PROJECT_EXISTS=$?
 if [ $PROJECT_EXISTS -gt 0 ]; then # doesn't exist or other error
   ssh-keygen -t rsa -N $SSH_PASSWORD -C "jupyter_in_space" -f /home/jovyan/.ssh/id_rsa
-  duplicity --allow-source-mismatch /home/jovyan/ s3://$S3_ENDPOINT/$BUCKET/$PROJECT/
+  duplicity --allow-source-mismatch --exclude /home/jovyan/.cache /home/jovyan/ s3://$S3_ENDPOINT/$BUCKET/$PROJECT/
 else #restore
-  duplicity  restore s3://$S3_ENDPOINT/$BUCKET/$PROJECT/ /home/jovyan/
+  duplicity  restore --force s3://$S3_ENDPOINT/$BUCKET/$PROJECT/ /home/jovyan/
 #  chmod 400 /home/jovyan/.ssh/id_rsa
 fi
 

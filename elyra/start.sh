@@ -4,6 +4,10 @@
 echo AWSAccessKeyId=$ACCESS_KEY_ID >> /home/jovyan/duplicity_credentials.txt
 echo AWSSecretKey=$SECRET_ACCESS_KEY >> /home/jovyan/duplicity_credentials.txt
 
+export DISABLE_BACKUP_LOOP=${DISABLE_BACKUP_LOOP=0}
+export PROJECT=${PROJECT="default"}
+export SSH_PASSWORD=${SSH_PASSWORD="password"}
+export JL_PASSWORD=${JL_PASSWORD="password"}
 
 eval `ssh-agent`
 

@@ -30,5 +30,5 @@ if [ $DISABLE_BACKUP_LOOP -ne 1 ]; then
   while true; do duplicity --allow-source-mismatch --exclude /home/jovyan/.cache /home/jovyan/ s3://$S3_ENDPOINT/$BUCKET/$PROJECT/; sleep 1; done  &
 fi
 
-
+cd /home/jovyan/work/
 jupyter lab --no-browser --ServerApp.password="$(echo $JL_PASSWORD | python -c 'from notebook.auth import passwd;print(passwd(input()))')"

@@ -1,4 +1,4 @@
-export IMAGE_VERSION="0.21"
-docker build -t elyra-ce:$IMAGE_VERSION .
-docker tag elyra-ce:$IMAGE_VERSION romeokienzler/elyra-ce:$IMAGE_VERSION
-docker push romeokienzler/elyra-ce:$IMAGE_VERSION
+export IMAGE_VERSION="0.23"
+docker build -t elyra:$IMAGE_VERSION .
+docker tag elyra:$IMAGE_VERSION romeokienzler/elyra:$IMAGE_VERSION
+docker push romeokienzler/elyra:$IMAGE_VERSION

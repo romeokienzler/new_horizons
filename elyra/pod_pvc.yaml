@@ -2,9 +2,9 @@
   apiVersion: v1
   kind: Pod
   metadata:
-    name: elyra-ai
+    name: elyra
     labels:
-      app: elyra-ai
+      app: elyra
   spec:
     containers:
       - name: elyra-ai

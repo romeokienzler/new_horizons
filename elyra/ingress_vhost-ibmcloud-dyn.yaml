@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"  
 spec:
   rules:
-  - host: "rkie-elyra-kubeflow-442dbba0442be6c8c50f31ed96b00601-0000.eu-de.containers.appdomain.cloud"
+  - host: "bfh.rkie-elyra-kubeflow-442dbba0442be6c8c50f31ed96b00601-0000.eu-de.containers.appdomain.cloud"
     http:
       paths:
       - path: /

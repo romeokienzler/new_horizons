@@ -1,7 +1,5 @@
 #!/bin/bash
-wget https://dl.k8s.io/v1.21.0/kubernetes-client-linux-amd64.tar.gz
-tar xvfz kubernetes-client-linux-amd64.tar.gz
-chmod 755 kubernetes/client/bin/kubectl
-mv kubernetes/client/bin/kubectl /bin/
-rm -Rf kubernetes
-rm kubernetes-client-linux-amd64.tar.gz
+#wget https://dl.k8s.io/v1.21.0/kubernetes-client-linux-amd64.tar.gz
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo mv kubectl /bin/
+sudo chmod 755 /bin/kubectl

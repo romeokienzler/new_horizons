@@ -4,7 +4,7 @@ metadata:
   name: kfp-ingress
 spec:
   rules:
-  - host: "kubeflow.localhost"
+  - host: "kubeflow"
     http:
       paths:
       - path: /
@@ -14,7 +14,7 @@ spec:
             name: ml-pipeline-ui
             port:
               number: 80
-  - host: "minio.localhost"
+  - host: "minio"
     http:
       paths:
       - path: /

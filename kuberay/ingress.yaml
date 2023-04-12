@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ray-ingress
+spec:
+  rules:
+  - host: "pairs-interactive01.pok.ibm.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: raycluster-autoscaler-head-svc
+            port:
+              number: 8265

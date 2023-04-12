@@ -14,7 +14,7 @@ spec:
         targetPort: 443
         name: https
     externalIPs:
-      - '{{external_ip}}'
+      - 9.47.220.58
     selector:
        app.kubernetes.io/component: controller
        app.kubernetes.io/instance: ingress-nginx

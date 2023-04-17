@@ -9,6 +9,6 @@ spec:
     - port: 8888
       protocol: TCP
       targetPort: 8888
-      name: elyra-ai
+      name: elyra
   selector:
     app: elyra

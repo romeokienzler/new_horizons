@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elyra-ingress
+spec:
+  rules:
+  - host: "elyra.oauth-openshift.apps.dev.accelerated-discovery.res.ibm.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: elyra
+            port:
+              number: 8888

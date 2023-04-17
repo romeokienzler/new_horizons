@@ -1,0 +1,4 @@
+FROM elyra/elyra
+USER root
+RUN chgrp -R 0 / && chmod -R g=u / 
+USER jovyian

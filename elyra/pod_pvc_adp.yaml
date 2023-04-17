@@ -1,0 +1,22 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: elyra
+    labels:
+      app: elyra
+  spec:
+    containers:
+      - name: elyra
+        image: romeokienzler/elyra_openshift
+        command: ["jupyter"]
+        args: ["lab"]
+        ports:
+          - containerPort: 8888
+        volumeMounts:
+          - name: data
+            mountPath: /dccstor/
+    volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: ray-shared-data

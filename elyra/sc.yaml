@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+  annotations:
+     volume.alpha.kubernetes.io/storage-class: default
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer

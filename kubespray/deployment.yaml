@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+    name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+      name: nginx-deployment
+  template:
+    metadata:
+      labels:
+        app: nginx
+        name: nginx-deployment
+    spec:
+      containers:
+      - name: nginx-deployment
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: "/pairsdatafs04/kubernetes"
+          name: storage
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: pvclocal 
+

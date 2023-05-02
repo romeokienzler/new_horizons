@@ -1,0 +1,76 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv1
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: sc-nfs
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /pairsdatafs04/kubernetes
+    server: 200.168.10.176
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv2
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: sc-nfs
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /pairsdatafs04/kubernetes
+    server: 200.168.10.176
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv3
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: sc-nfs
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /pairsdatafs04/kubernetes
+    server: 200.168.10.176
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv4
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: sc-nfs
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /pairsdatafs04/kubernetes
+    server: 200.168.10.176
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv5
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: sc-nfs
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /pairsdatafs04/kubernetes
+    server: 200.168.10.176
+
